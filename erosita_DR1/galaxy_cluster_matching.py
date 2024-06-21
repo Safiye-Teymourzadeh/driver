@@ -36,7 +36,6 @@ def match_galaxies_and_clusters(galaxy_dataframe: pd.DataFrame, cluster_datafram
     """
     This is the main function.
     """
-
     galaxy_dataframe['environment'] = "Field"
     galaxy_dataframe['cluster_mass'] = None
     galaxy_dataframe['cluster_name'] = None

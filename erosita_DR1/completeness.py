@@ -2,6 +2,7 @@
 
 import numpy as np
 import pandas as pd
+from constants import *
 
 '''
 input:
@@ -28,13 +29,6 @@ output:
 # todo: if we can change this for mass_intervals just from here if we use a small_catalog that has mass of the objects included
 FLUX_BINS = np.logspace(-5,-2,1000)
 
-REGIONS_OF_SKY = {
-    # 'G02': {'RAcen': (30.20, 38.80), 'DECcen': (-10.25, -3.72)},
-    'G09': {'RAcen': (129.0, 141.0), 'DECcen': (-2.0, 3.0)},
-    'G12': {'RAcen': (174.0, 186.0), 'DECcen': (-3.0, 2.0)},
-    'G15': {'RAcen': (211.5, 223.5), 'DECcen': (-2.0, 3.0)},
-    'G23': {'RAcen': (339.0, 351.0), 'DECcen': (-35.0, -30.0)},
-}
 
 def create_completeness_dataframe(big_survey, small_survey, flux_type, region):
     object_completeness = calculate_completeness_of_objects(big_survey=big_survey, small_survey=small_survey, flux_type=flux_type, region=region)
