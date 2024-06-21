@@ -42,11 +42,12 @@ def match_galaxies_and_clusters(galaxy_dataframe: pd.DataFrame, cluster_datafram
     galaxy_dataframe['cluster_name'] = None
 
     for i, galaxy in galaxy_dataframe.iterrows():
+
         for j, cluster in cluster_dataframe.iterrows():
             if compare_position(galaxy_ra=galaxy['RA'], galaxy_dec=galaxy['DEC'], cluster_ra=cluster['RA'], cluster_dec=cluster['DEC'], cluster_z=cluster['z'], cluster_radius_Mpc=cluster['cluster_radius_Mpc']):
                 if compare_redshift(cluster_z=cluster['z'], cluster_Velocity_Dispersion=cluster['cluster_Velocity_Dispersion'], galaxy_z=galaxy['z']):
                     galaxy_dataframe.at[i, 'environment'] = "ClusterMember"
-                    # galaxy[cluster_mass] = cluster['None'] # ask Matthias about Mass
+                    # galaxy[cluster_mass] = cluster['None'] # todo: check for the Mass
                     galaxy_dataframe.at[i, 'cluster_name'] = cluster['c_NAME']
 
         sys.stdout.write('\r')
@@ -57,7 +58,7 @@ def match_galaxies_and_clusters(galaxy_dataframe: pd.DataFrame, cluster_datafram
 
 def compare_redshift(cluster_z, cluster_Velocity_Dispersion, galaxy_z, threshold_factor=1):
     delta_z = (cluster_Velocity_Dispersion / c) * threshold_factor * (1 + cluster_z) # added *(1+cluster_z) because of relativity redshift
-    return np.abs(galaxy_z - cluster_z) <= 3 * delta_z # should have three sigmas for the velosity dispersion
+    return np.abs(galaxy_z - cluster_z) <= 3 * delta_z  # should have three sigmas for the velocity dispersion
 
 
 def angular_separation(ra1, dec1, ra2, dec2):

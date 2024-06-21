@@ -27,9 +27,9 @@ def get_weighted_mass_histogram(input_mass_completeness_dataframe: pd.DataFrame,
     mass_column = filtered_by_region_dataframe['mstar']
     completeness_column = filtered_by_region_dataframe['completeness']
     volume_richard_curve = get_region_volume(region_name=region_name, mass_list=mass_column)
-    weight = np.log(10)/ (volume_richard_curve * completeness_column * DEX)
+    weight = np.log(10) / (volume_richard_curve * completeness_column * DEX)
 
-    mass_histogram =  np.histogram(mass_column, MASS_BINS, weights=weight)[0]
+    mass_histogram = np.histogram(mass_column, MASS_BINS, weights=weight)[0]
     histogram_errors = calculate_error(mass_histogram, len(mass_histogram))
 
     return mass_histogram, histogram_errors
@@ -73,13 +73,13 @@ def calculate_volume(radius, fraction):
 
 # Function to calculate error
 def calculate_error(y_data, number_of_galaxies):
-    # check for the value of 0.043
+    # todo:check for the value of 0.043
     return np.sqrt((y_data * number_of_galaxies**(-1/2))**2 + (y_data * 0.043)**2)
 
 
 def calculate_richard_curve(log_mass):
     """
-    # the constants are not reliable, think about what to do with them
+    # todo:the constants are not reliable, think about what to do with them
     Richards curve from GAMA based on Table 5, Eq. 2 from Driver et al. 2022
     :param log_mass: log10 of stellar mass limit
     :return: co moving distance  in Mpc
