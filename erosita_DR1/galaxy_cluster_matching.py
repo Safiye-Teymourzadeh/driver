@@ -46,7 +46,8 @@ def match_galaxies_and_clusters(galaxy_dataframe: pd.DataFrame, cluster_datafram
             if compare_position(galaxy_ra=galaxy['RA'], galaxy_dec=galaxy['DEC'], cluster_ra=cluster['RA'], cluster_dec=cluster['DEC'], cluster_z=cluster['z'], cluster_radius_Mpc=cluster['cluster_radius_Mpc']):
                 if compare_redshift(cluster_z=cluster['z'], cluster_Velocity_Dispersion=cluster['cluster_Velocity_Dispersion'], galaxy_z=galaxy['z']):
                     galaxy_dataframe.at[i, 'environment'] = "ClusterMember"
-                    # galaxy[cluster_mass] = cluster['None'] # todo: check for the Mass
+                    galaxy_dataframe.at[i, 'cluster_radius'] = cluster['cluster_radius_Mpc']
+                    # galaxy_dataframe.at[i, 'cluster_MASS'] = cluster['cluster_MASS']
                     galaxy_dataframe.at[i, 'cluster_name'] = cluster['c_NAME']
 
         sys.stdout.write('\r')

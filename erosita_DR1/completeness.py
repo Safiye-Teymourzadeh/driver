@@ -25,8 +25,6 @@ output:
 
 
 
-# todo: check for the definition of Flux_Bins
-# todo: if we can change this for mass_intervals just from here if we use a small_catalog that has mass of the objects included
 FLUX_BINS = np.logspace(-5,-2,1000)
 
 
