@@ -1,7 +1,8 @@
 import pandas as pd
 import sys
 from astropy.cosmology import Planck15 as cosmo
-from constants import *
+import numpy as np
+from constants import c
 
 
 
