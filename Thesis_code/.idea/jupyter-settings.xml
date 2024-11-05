@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JupyterPersistentConnectionParameters">
+    <option name="knownRemoteServers">
+      <list>
+        <JupyterConnectionParameters>
+          <option name="authType" value="notebook" />
+          <option name="token" value="21af521635cc49dfae38b3e98b80f3e990381fd9ca97de63" />
+          <option name="urlString" value="http://127.0.0.1:8890" />
+          <authParams2>
+            <map>
+              <entry key="token" value="21af521635cc49dfae38b3e98b80f3e990381fd9ca97de63" />
+            </map>
+          </authParams2>
+        </JupyterConnectionParameters>
+        <JupyterConnectionParameters>
+          <option name="authType" value="notebook" />
+          <option name="token" value="066fe6a1fa9fcc38d15af83a67cc199a8874b1dcd4a8336b" />
+          <option name="urlString" value="http://localhost:8888/" />
+          <authParams2>
+            <map>
+              <entry key="token" value="066fe6a1fa9fcc38d15af83a67cc199a8874b1dcd4a8336b" />
+            </map>
+          </authParams2>
+        </JupyterConnectionParameters>
+        <JupyterConnectionParameters>
+          <option name="authType" value="notebook" />
+          <option name="urlString" value="http://localhost:8890" />
+          <authParams2>
+            <map />
+          </authParams2>
+        </JupyterConnectionParameters>
+      </list>
+    </option>
+    <option name="moduleParameters">
+      <map>
+        <entry key="$PROJECT_DIR$/.idea/Thesis_code.iml">
+          <value>
+            <JupyterConnectionParameters>
+              <option name="authType" value="notebook" />
+              <option name="token" value="066fe6a1fa9fcc38d15af83a67cc199a8874b1dcd4a8336b" />
+              <option name="urlString" value="http://localhost:8888/" />
+              <authParams2>
+                <map>
+                  <entry key="token" value="066fe6a1fa9fcc38d15af83a67cc199a8874b1dcd4a8336b" />
+                </map>
+              </authParams2>
+            </JupyterConnectionParameters>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
